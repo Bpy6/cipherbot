@@ -42,7 +42,7 @@ class CipherBot:
         file.close()
     
     def update(self):
-        call = requests.get('https://api.telegram.org/bot1017242146:AAHhJtdAaBXwhgyS2Giqdy37QpFWcTqT9E0/getUpdates?offset='+str(self.offset))
+        call = requests.get('https://api.telegram.org/bot1017242146:AAEnjzBDXaWFFeg3KSLCTla0SMUGs-O5fOw/getUpdates?offset='+str(self.offset))
         update = call.json().get('result')
         if update:
             self.offset = int(update[-1].get('update_id'))+1
