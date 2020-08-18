@@ -7,7 +7,7 @@ import webbrowser
 import io
 import base64
 
-token = '1017242146:AAHhJtdAaBXwhgyS2Giqdy37QpFWcTqT9E0'
+token = '1017242146:AAEnjzBDXaWFFeg3KSLCTla0SMUGs-O5fOw'
 url = 'https://api.telegram.org/bot'
 chat_id = '-1001202697355'
 bpy6_chat = '228334796'
