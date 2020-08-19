@@ -11,7 +11,7 @@ class Riddle:
     def __init__(self):
         self.scoreboard = {}
         self.winners = []
-        self.reward = 2
+        self.reward = 3
         self.status = 'setup'
         self.question = self.getQuestion()
         print(f'Accepted Question:{self.question}')
@@ -104,6 +104,8 @@ class CipherBot:
             return result
         
     def checkForEvents(self, update):
+        if update.sender == 'Bpy6na' and update.text == 'closeRiddle': activeRiddle.close()
+        
         if update.chatType == 'private' and update.text == activeRiddle.correctAnswer:
             if update.sender not in activeRiddle.winners: 
                 self.sendMessage(update.chat_id, 'Молодей! Победа!')
