@@ -2,8 +2,9 @@ import requests
 import random
 import time
 import json
+import os
 
-token = '1017242146:AAEnjzBDXaWFFeg3KSLCTla0SMUGs-O5fOw'
+token = str(os.environ.get('TOKEN'))
 url = 'https://api.telegram.org/bot'
 
 class Riddle:
@@ -90,13 +91,13 @@ class CipherBot:
         print('awaiting update...')
         while not updates:
             time.sleep(1)
-            call = requests.get('https://api.telegram.org/bot1017242146:AAEnjzBDXaWFFeg3KSLCTla0SMUGs-O5fOw/getUpdates?offset='+str(offset))
+            call = requests.get(f'https://api.telegram.org/bot{token}/getUpdates?offset='+str(offset))
             updates = call.json().get('result')
         self.offset = int(updates[-1].get('update_id'))+1
         return updates[-1]
     
     def getUpdates(self):
-        call = requests.get('https://api.telegram.org/bot1017242146:AAEnjzBDXaWFFeg3KSLCTla0SMUGs-O5fOw/getUpdates?offset='+str(self.offset))
+        call = requests.get(f'https://api.telegram.org/bot{token}/getUpdates?offset='+str(self.offset))
         result = call.json().get('result')
         if result:
             self.offset = int(result[-1].get('update_id'))+1
