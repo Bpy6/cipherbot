@@ -104,7 +104,7 @@ class CipherBot:
             return result
         
     def checkForEvents(self, update):
-        if update.sender == 'Bpy6na' and update.text == 'closeRiddle': activeRiddle.close()
+        if update.chat_id == '228334796' and update.text == 'closeRiddle': activeRiddle.close()
         
         if update.chatType == 'private' and update.text == activeRiddle.correctAnswer:
             if update.sender not in activeRiddle.winners: 
