@@ -56,17 +56,17 @@ class Riddle:
 class Update:
     def __init__(self, result):
         self.result = result
-        self.message_id = self.result.get('message','').get('message_id','')
-        self.text = self.result.get('message','').get('text','').lower()
-        if self.result.get('message','').get('new_chat_participant',{}).get('username',''):
-            self.newMemberName = self.result.get('message','').get('new_chat_participant',{}).get('username','')
-        else: self.newMemberName = self.result.get('message','').get('new_chat_participant',{}).get('first_name','')
-        if self.result.get('message','').get('from',{}).get('username',''):
-            self.sender = self.result.get('message','').get('from',{}).get('username','')
-        else: self.sender = self.result.get('message','').get('from',{}).get('first_name','')
-        self.chatType = self.result.get('message','').get('chat',{}).get('type','')
-        self.chat_id = self.result.get('message','').get('chat',{}).get('id','')
-        print(self.result.get('message'))  
+        self.message_id = self.result.get('message',{}).get('message_id','')
+        self.text = self.result.get('message',{}).get('text','').lower()
+        if self.result.get('message',{}).get('new_chat_participant',{}).get('username',''):
+            self.newMemberName = self.result.get('message',{}).get('new_chat_participant',{}).get('username','')
+        else: self.newMemberName = self.result.get('message',{}).get('new_chat_participant',{}).get('first_name','')
+        if self.result.get('message',{}).get('from',{}).get('username',''):
+            self.sender = self.result.get('message',{}).get('from',{}).get('username','')
+        else: self.sender = self.result.get('message',{}).get('from',{}).get('first_name','')
+        self.chatType = self.result.get('message',{}).get('chat',{}).get('type','')
+        self.chat_id = self.result.get('message',{}).get('chat',{}).get('id','')
+        print(self.result)   
            
 class CipherBot:
     def __init__(self, ready, token):
