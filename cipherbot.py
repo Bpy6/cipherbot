@@ -9,7 +9,7 @@ url = 'https://api.telegram.org/bot'
 
 class Riddle:
     def __init__(self):
-        self.scoreboard = {'Paralitiq': 3, 'alexoal': 2, 'SyksAxxx': 1}
+        self.scoreboard = {'Paralitiq': 4, 'alexoal': 2, 'SyksAxxx': 1, 'MedvedevDev': 3, 'Yuris_navigator': 2}
         self.winners = []
         self.reward = 3
         self.status = 'setup'
@@ -42,7 +42,7 @@ class Riddle:
         self.winners.append(winner)
         if winner not in self.scoreboard.keys(): self.scoreboard.update({winner:0})
         print(self.scoreboard)
-        self.scoreboard.update({winner:+self.reward})
+        self.scoreboard.update({winner:self.scoreboard.get(winner)+self.reward})
         print(self.scoreboard)
         self.reward -= 1
         if self.reward == 0: self.close()
