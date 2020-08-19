@@ -133,7 +133,7 @@ class CipherBot:
         print(f'Forwarded message {messageId} to {toChatId}')
 
 if __name__ == '__main__':
-    print(f'Token Initialized: {token})
+    print(f'Token Initialized: {token}')
     bot = CipherBot(False, token)
     while True:
         activeRiddle = Riddle()
