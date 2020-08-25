@@ -9,7 +9,7 @@ url = 'https://api.telegram.org/bot'
 
 class Riddle:
     def __init__(self):
-        self.scoreboard = {'Paralitiq': 4, 'alexoal': 2, 'SyksAxxx': 1, 'MedvedevDev': 3, 'Yuris_navigator': 2}
+        self.scoreboard = {'Paralitiq': 4, 'alexoal': 4, 'SyksAxxx': 1, 'MedvedevDev': 3, 'Yuris_navigator': 5}
         self.winners = []
         self.reward = 3
         self.status = 'setup'
